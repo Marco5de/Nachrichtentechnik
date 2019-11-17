@@ -11,13 +11,6 @@ len = length(pvec);
 x = [];
 seq = ceil(pvec * q);
 
-%for i=1:length(seq)
-%    for j=1:seq(i)
-%        %Performance for large values would be horrible
-%        x = [x,(i-1+'A')];
-%    end
-%end
-
 for i=1:length(seq)
     x = [x, repmat((i-1+'A'), 1, seq(i))];
 end
