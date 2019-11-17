@@ -3,4 +3,5 @@ function D23 = d23(pvec, q)
     hShould = pvec
     H = entropy(h)
     HShould = entropy(pvec)
+    deltaP = abs(pvec - h)
 end
