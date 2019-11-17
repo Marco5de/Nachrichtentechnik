@@ -1,4 +1,4 @@
-function info_sequence = dms(pvec,q)
+function info_sequence = dms_rand(pvec,q)
 %dms implementing a discrete memoryless source, which returns a random
 %sequence of length q using symbols of a Alphabet (A,B,...) based on the
 %probabilites in pvec
