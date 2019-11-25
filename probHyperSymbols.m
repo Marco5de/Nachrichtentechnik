@@ -5,8 +5,8 @@ if ~isscalar(B)
     error("B has to be scalar");
 end
 %check if given parameter pvec is 1-dimensional
-if ~isscalar(p)
-    error("p has to be scalar");   
+if (~isscalar(p) || p<0 || p>1)
+    error("p has to be scalar and in interval [0,1]");   
 end
 
 %wahrscheinlichkeiten ausrechnen
