@@ -1,18 +1,18 @@
-function returnVec = probHyperSymbols(pvec,B)
+function returnVec = probHyperSymbols(p,B)
 %probHyperSymbols this function computes the probability of hypersymbols
 %based on probability vector pvec and B (Hypersymbol length)
-if size(B)~=[1,1]
+if ~isscalar(B)
     error("B has to be scalar");
 end
-[m,L] = size(pvec);
 %check if given parameter pvec is 1-dimensional
-if m~=1
-    error("Wahrscheinlichkeits Matrizen werden nicht unterstützt!");   
+if ~isscalar(p)
+    error("p has to be scalar");   
 end
 
-%Todo wahrscheinlichkeiten ausrechnen und wie müssen diese angeordnet
-%werden?
-
-
+%wahrscheinlichkeiten ausrechnen
+returnVec = [];
+for i=0:B
+	returnVec = [returnVec, repmat(p^i*(1-p)^(B-i), 1, nchoosek(B, i))];
 end
 
+end
