@@ -12,6 +12,7 @@ end
 %wahrscheinlichkeiten ausrechnen
 returnVec = [];
 for i=0:B
+    %repeats prob in dim(1,nchoosek(B,i))
 	returnVec = [returnVec, repmat(p^i*(1-p)^(B-i), 1, nchoosek(B, i))];
 end
 
